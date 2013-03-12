@@ -10,6 +10,7 @@ import org.n52.huddle.di.impl.UserFactoryImpl;
 import org.n52.huddle.di.impl.UserServiceImpl;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
 
 @Ignore
 public class UserModule extends AbstractModule implements AutoLoadedModule {

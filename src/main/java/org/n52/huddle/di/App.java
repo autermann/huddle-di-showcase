@@ -2,12 +2,12 @@ package org.n52.huddle.di;
 
 import java.util.UUID;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.n52.huddle.di.guice.Implementations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.inject.Inject;
-import com.google.inject.name.Named;
 
 public class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);

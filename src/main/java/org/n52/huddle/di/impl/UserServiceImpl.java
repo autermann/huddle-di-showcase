@@ -2,15 +2,15 @@ package org.n52.huddle.di.impl;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import org.n52.huddle.di.User;
 import org.n52.huddle.di.UserDAO;
 import org.n52.huddle.di.UserFactory;
 import org.n52.huddle.di.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
 
 @Singleton
 public class UserServiceImpl implements UserService {
