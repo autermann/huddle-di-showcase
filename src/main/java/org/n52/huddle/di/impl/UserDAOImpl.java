@@ -1,5 +1,6 @@
 package org.n52.huddle.di.impl;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -8,7 +9,6 @@ import org.n52.huddle.di.User;
 import org.n52.huddle.di.UserDAO;
 
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
 import com.google.inject.persist.Transactional;
 
 public class UserDAOImpl implements UserDAO {

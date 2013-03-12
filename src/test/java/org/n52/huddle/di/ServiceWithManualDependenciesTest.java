@@ -1,9 +1,5 @@
 package org.n52.huddle.di;
 
-import org.n52.huddle.di.UserService;
-import org.n52.huddle.di.UserFactory;
-import org.n52.huddle.di.UserDAO;
-import org.n52.huddle.di.User;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 

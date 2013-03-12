@@ -29,10 +29,10 @@ public class Implementations {
     }
 
     public static <T> Class<? extends T> find(Class<T> clazz) throws ImplementationNotFoundException {
-        Set<Class<? extends T>> services = reflections.getSubTypesOf(clazz);
-        log.debug("Found implementations for {}: {}", clazz, services);
+        Set<Class<? extends T>> classes = reflections.getSubTypesOf(clazz);
+        log.debug("Found implementations for {}: {}", clazz, classes);
         IsInstantiable instantiable = new IsInstantiable();
-        Iterator<Class<? extends T>> i = services.iterator();
+        Iterator<Class<? extends T>> i = classes.iterator();
         while (i.hasNext()) {
             Class<? extends T> impl = i.next();
             if (instantiable.apply(impl)) {
