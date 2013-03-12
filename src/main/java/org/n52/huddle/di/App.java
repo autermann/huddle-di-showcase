@@ -11,11 +11,15 @@ import org.slf4j.LoggerFactory;
 
 public class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);
+    public static final String TEST_USER_COUNT = "user-test";
 
+    public static void main(String[] args) {
+        Implementations.getInjector().getInstance(App.class).run();
+    }
     @Inject
     private UserService userService;
     @Inject
-    @Named("user-count")
+    @Named(TEST_USER_COUNT)
     private int count;
 
     public void run() {
@@ -36,9 +40,5 @@ public class App {
                 log.debug("Loaded {}", user);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Implementations.getInjector().getInstance(App.class).run();
     }
 }
