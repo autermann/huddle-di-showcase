@@ -2,21 +2,14 @@ package org.n52.huddle.di;
 
 import java.util.UUID;
 
-import org.n52.huddle.di.guice.Implementations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.inject.Inject;
-import com.google.inject.name.Named;
 
 public class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
-    @Inject
-    private UserService userService;
-    @Inject
-    @Named("user-count")
-    private int count;
+    private final UserService userService = Configuration.getInstance().getService();
+    private final int count = Configuration.getInstance().getUserCount();
 
     public void run() {
         String[] ids = new String[count];
@@ -39,6 +32,6 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Implementations.getInjector().getInstance(App.class).run();
+        new App().run();
     }
 }

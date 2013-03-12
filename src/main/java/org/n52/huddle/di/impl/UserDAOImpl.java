@@ -8,12 +8,9 @@ import org.n52.huddle.di.User;
 import org.n52.huddle.di.UserDAO;
 
 import com.google.common.base.Preconditions;
-import com.google.inject.Inject;
-import com.google.inject.persist.Transactional;
 
 public class UserDAOImpl implements UserDAO {
-    @Inject
-    private EntityManager em;
+    private EntityManager em = EntityMangerProvider.getInstance().getEntityManager();
 
     @Override
     public User getByLastName(String lastName) {
@@ -29,10 +26,11 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    @Transactional
     public long save(User t) {
+        em.getTransaction().begin();
         Preconditions.checkNotNull(t);
         em.persist(t);
+        em.getTransaction().commit();
         return t.getId();
     }
 }
