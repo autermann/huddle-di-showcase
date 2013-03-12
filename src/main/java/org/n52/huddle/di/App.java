@@ -7,17 +7,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 public class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);
-    public static void main(String[] args) {
-        Implementations.getInjector().getInstance(App.class).run();
-    }
+
     @Inject
     private UserService userService;
+    @Inject
+    @Named("user-count")
+    private int count;
 
     public void run() {
-        String[] ids = new String[100];
+        String[] ids = new String[count];
 
         for (int i = 0; i < ids.length; ++i) {
 
@@ -36,4 +38,7 @@ public class App {
         }
     }
 
+    public static void main(String[] args) {
+        Implementations.getInjector().getInstance(App.class).run();
+    }
 }
