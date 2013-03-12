@@ -1,7 +1,5 @@
 package org.n52.huddle.di;
 
-import org.n52.huddle.di.UserDAO;
-import org.n52.huddle.di.User;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.Map;
